@@ -63,3 +63,14 @@ We hasv tested our code before uploading. The log files can be found in MiN/log.
 
 ![IN-R](source/omni_in21k_00.png)
 
+**If you use any content of this repo for your work, please cite the following bib entries:**
+
+    @misc{jiang2025minmixturenoisepretrained,
+      title={Min: Mixture of Noise for Pre-Trained Model-Based Class-Incremental Learning}, 
+      author={Kai Jiang and Zhengyan Shi and Dell Zhang and Hongyuan Zhang and Xuelong Li},
+      year={2025},
+      eprint={2509.16738},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2509.16738}
+      }
