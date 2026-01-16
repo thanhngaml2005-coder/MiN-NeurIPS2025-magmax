@@ -135,14 +135,13 @@ class MinNet(object):
         
         # [FIX OOM] Dọn GPU trước và sau khi tính proto
         self._clear_gpu()
-        prototype = self.get_task_prototype(self._network, train_loader)
-        self._network.extend_task_prototype(prototype)
+        
         
         self.run(train_loader)
+        self._network.after_task_magmax_merge()
         
         self._clear_gpu()
-        prototype = self.get_task_prototype(self._network, train_loader)
-        self._network.update_task_prototype(prototype)
+       
         
         train_loader = DataLoader(train_set, batch_size=self.buffer_batch, shuffle=True,
                                   num_workers=self.num_workers)
@@ -198,14 +197,12 @@ class MinNet(object):
         self._network.update_noise()
         
         self._clear_gpu()
-        prototype = self.get_task_prototype(self._network, train_loader)
-        self._network.extend_task_prototype(prototype)
+
         
         self.run(train_loader)
-        
+        self._network.after_task_magmax_merge()
         self._clear_gpu()
-        prototype = self.get_task_prototype(self._network, train_loader)
-        self._network.update_task_prototype(prototype)
+
 
         del train_set
 
