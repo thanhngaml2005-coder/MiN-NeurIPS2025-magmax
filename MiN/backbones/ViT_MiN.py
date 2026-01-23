@@ -115,7 +115,7 @@ class PiNoise(nn.Module):
     #     # 3. Bias vẫn nên để bằng 0 để tránh shift mean ban đầu
     #     if module.bias is not None:
     #         nn.init.constant_(module.bias, 0.)
-    # def update_noise(self):
+    def update_noise(self):
         """
         [Bước 2]: Sequential Init.
         Không reset weight. Giữ nguyên weight (đã merge từ task trước) để train tiếp.
