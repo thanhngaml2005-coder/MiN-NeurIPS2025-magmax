@@ -100,7 +100,7 @@ class PiNoise(nn.Module):
         torch.nn.init.constant_(module.weight, 0.)
         torch.nn.init.constant_(module.bias, 0.)
 
-    def _init_zero(self, module, scale=1e-4):
+    #def _init_zero(self, module, scale=1e-4):
     #     """
     #     Khởi tạo trọng số ngẫu nhiên nhưng với biên độ cực nhỏ (Near-Zero).
     #     Giúp phá vỡ đối xứng (Symmetry Breaking) nhưng vẫn giữ noise ban đầu xấp xỉ 0.
